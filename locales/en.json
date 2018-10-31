@@ -1,0 +1,61 @@
+{
+    "Title": "Contoso Air",
+	"Home": {
+		"HeroMessage": "Where do you<br>want to go?"
+	},
+	"Deals": {
+		"CitiesTitle": "Recommended for you",
+		"FlightsTitle": "Flight deals",
+		"FlightsTo": "to ",
+		"FlightsPrice": "Purchase by ",
+		"FlightsPriceFrom": "FROM $",
+		"FlightsOneWay": "ONE WAY",
+		"FlightsDatesButton": "View Dates"
+	},
+	"NavbarMenu": {
+		"Book": "Book",
+		"Booked": "My Booked",
+		"Login": "Login",
+		"Greeting": "Hi, <span>%s</span>"
+    },
+    "Footer": {
+        "About":{
+            "Title": "ABOUT CONTOSO",
+            "Link_1": "Who we are",
+            "Link_2": "Contact us",
+            "Link_3": "Travel advisories",
+            "Link_4": "Customer commitment",
+            "Link_5": "Feedback",
+            "Link_6": "Privacy notice"
+        },
+        "Customer":{
+            "Title": "CUSTOMER SERVICE",
+            "Link_1": "Careers",
+            "Link_2": "Legal",
+            "Link_3": "Newsroom",
+            "Link_4": "Investor relations",
+            "Link_5": "Contract of carriage",
+            "Link_6": "Tarmac delay plan",
+            "Link_7": "Site map"
+        },
+        "Products":{
+            "Title": "PRODUCTS AND SERVICES",
+            "Link_1": "Optional services and fees",
+            "Link_2": "Corporate travel",
+            "Link_3": "Travel agents",
+            "Link_4": "Cargo",
+            "Link_5": "Gift certificates",
+            "Link_6": "Follow us"
+        },
+        "Copyright": "This site is built by Microsoft for demonstration purposes only."
+    },
+	"Login": {
+		"Title": "Login",
+		"Username": "Username",
+        "Password": "Password",
+        "Error": {
+            "MissingCredentials": "Missing Credentials",
+            "InvalidUsername": "Empty username"
+        }
+	}
+}

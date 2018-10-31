@@ -1,0 +1,35 @@
+<section class="block-search">
+    <div class="container">
+        <div class="row block-search-row">
+            <div class="block-search-row-logo">
+                <span class="icon icon-logo"></span>
+            </div>
+            <div class="col-12 col-md-5 col-lg-7 align-self-center block-search-right"></div>
+            <div class="col-12 col-md-7 col-lg-5">
+                <div class="block-search-form box">
+                    <h2 class="block-search-form-title">{{i18n "Login.Title"}}</h2>
+                    <form action="/login" method="POST">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="username">{{i18n "Login.Username"}}</label>
+                                <input id="username" name="username" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">{{i18n "Login.Password"}}</label>
+                                <input id="password" name="password" type="password" class="form-control">
+                            </div>
+                            {{#if errors}}
+                                <div class="alert alert-danger" role="alert">
+                                    {{#each errors}}
+                                    <span>{{i18n this}}</span> {{#unless @last}}<br>{{/unless}}
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                            <button class="btn btn-md btn-primary block-search-form-button" type="submit">Log in</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "0",
+    "duration": "13h 22m",
+    "price": "479",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3750",
+    "segments": [
+      {
+        "flight": "935",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T08:05:00Z",
+        "toCode": "CDG",
+        "arrivalTime": "2017-03-04T12:15:00Z"
+      },
+      {
+        "flight": "851",
+        "fromCode": "CDG",
+        "departTime": "2017-03-04T15:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "duration": "10h 15m",
+    "price": "543",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3750",
+    "segments": [
+      {
+        "flight": "335",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T09:05:00Z",
+        "toCode": "JFK",
+        "arrivalTime": "2017-03-04T14:15:00Z"
+      },
+      {
+        "flight": "251",
+        "fromCode": "JFK",
+        "departTime": "2017-03-04T17:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "duration": "08h 15m",
+    "price": "498",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "4150",
+    "segments": [
+      {
+        "flight": "125",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T08:05:00Z",
+        "toCode": "TOR",
+        "arrivalTime": "2017-03-04T13:15:00Z"
+      },
+      {
+        "flight": "121",
+        "fromCode": "TOR",
+        "departTime": "2017-03-04T15:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "duration": "09h 45m",
+    "price": "567",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3750",
+    "segments": [
+      {
+        "flight": "11",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T08:05:00Z",
+        "toCode": "BOS",
+        "arrivalTime": "2017-03-04T13:15:00Z"
+      },
+      {
+        "flight": "851",
+        "fromCode": "BOS",
+        "departTime": "2017-03-04T15:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "duration": "11h 20m",
+    "price": "608",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "4150",
+    "segments": [
+      {
+        "flight": "233",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T08:05:00Z",
+        "toCode": "JFK",
+        "arrivalTime": "2017-03-04T14:15:00Z"
+      },
+      {
+        "flight": "844",
+        "fromCode": "JFK",
+        "departTime": "2017-03-04T15:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "duration": "11h 25m",
+    "price": "577",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3750",
+    "segments": [
+      {
+        "flight": "935",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T08:05:00Z",
+        "toCode": "JFK",
+        "arrivalTime": "2017-03-04T13:15:00Z"
+      },
+      {
+        "flight": "851",
+        "fromCode": "JFK",
+        "departTime": "2017-03-04T15:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-05T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "duration": "15h 45m",
+    "price": "560",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3450",
+    "segments": [
+      {
+        "flight": "698",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T02:30:00Z",
+        "toCode": "FRA",
+        "arrivalTime": "2017-03-04T04:40:00Z"
+      },
+      {
+        "flight": "851",
+        "fromCode": "FRA",
+        "departTime": "2017-03-04T07:30:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-04T09:15:00Z"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "duration": "10h 15m",
+    "price": "701",
+    "fromCode": "FROMCODE",
+    "toCode": "TOCODE",
+    "distance": "3450",
+    "segments": [
+      {
+        "flight": "335",
+        "fromCode": "FROMCODE",
+        "departTime": "2017-03-04T09:05:00Z",
+        "toCode": "FRA",
+        "arrivalTime": "2017-03-04T14:15:00Z"
+      },
+      {
+        "flight": "251",
+        "fromCode": "FRA",
+        "departTime": "2017-03-04T17:00:00Z",
+        "toCode": "TOCODE",
+        "arrivalTime": "2017-03-04T09:00:00Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+<ul class="block-flights-results">
+    {{#each list}}
+    <li class="block-flights-results-list-item">
+        <input id="{{../name}}-{{id}}" class="d-none" type="radio" name="{{../name}}" value="{{id}}" {{#if @first}}checked{{/if}} />
+
+        <label class="row" for="{{../name}}-{{id}}">
+        <span class="col-9">
+            <ul class="block-flights-results-list-item-flights">
+                {{#each segments}}
+                <li class="row justify-content-start flex-nowrap block-flights-results-list-item-flights-flight">
+                    <span class="col-4 col-lg-3">
+                        Flight <span>{{flight}}</span>
+                    </span>
+
+                    <span class="col-4 col-lg-3">
+                        <span>{{fromCode}}</span>
+                        <span>{{departTime}}</span>
+                    </span>
+                    <span class="col-4 col-lg-3">
+                        <span>{{toCode}}</span>
+                        <span>{{arrivalTime}}</span>
+                    </span>
+                </li>
+                {{/each}}
+            </ul>
+            <span class="row">
+                <span class="col-12">
+                    <span>{{duration}}</span> | <a href="#">{{stops}} stop/s</a>
+                </span>
+            </span>
+        </span>
+        <span class="col-3 text-center text-md-right">
+            <div class="block-flights-results-list-item-price">
+                <span>${{price}}</span>
+                <span class="big-blue-radio {{#if @first}}big-blue-radio--active{{/if}}">
+                </span>
+            </div>
+        </span>
+        </label>
+    </li>
+    {{/each}}
+</ul>

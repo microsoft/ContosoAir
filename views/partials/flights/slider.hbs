@@ -1,0 +1,29 @@
+<days selected="479">
+    <div class="block-flights-days">
+        <div class="row">
+            <div class="col-12 block-flights-days-slider">
+                <div class="row">
+                    <div class="col-12 col-sm-1 block-flights-days-slider-arrow">
+                        <span class="icon icon-arrow-left"></span>
+                    </div>
+                    <div class="col-12 col-sm-10">
+                        <ul class="block-flights-days-slider-items">
+                            {{#each this}}
+                                <li class="block-flights-days-slider-items-item">
+                                    <span class="block-flights-days-slider-items-item-content {{#if active}}active{{/if}}">
+                                        <span class="d-block">{{dayWeek}}</span>
+                                        <span class="d-block">{{dayText}}</span>
+                                        <span class="d-block block-flights-days-slider-items-item-content-price">${{price}}</span>
+                                    </span>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-1 block-flights-days-slider-arrow">
+                        <span class="icon icon-arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</days>

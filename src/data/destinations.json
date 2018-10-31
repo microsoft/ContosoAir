@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "title": "Hawaii",
+        "desktop-image": "hawaii.jpg",
+        "mobile-image": "hawaii_m.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Paris",
+        "desktop-image": "paris.jpg",
+        "mobile-image": "paris_m.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Barcelona",
+        "desktop-image": "barcelona.jpg",
+        "mobile-image": "barcelona_m.jpg"
+    }
+]

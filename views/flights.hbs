@@ -1,0 +1,58 @@
+<div class="footer-background">
+    <div class="container container-footer">
+        <section class="block-flights">
+            <a class="redefine-search" href="/book">
+                Change your search <span class="icon icon-arrow-right"></span>
+            </a>
+            <hr>
+            <h1 class="block-flights-title">Available flights</h1>
+            <form action="/book/flights" method="POST">
+                <h2 class="block-flights-title2">Select departing flight</h2>
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <h3 class="block-flights-title3">{{departure.name}} to {{returning.name}}</h3>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        {{> flights/slider departure/days}}
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-12 col-md-2">
+                        {{> flights/filters }}
+                    </div>
+                    <div class="col-12 col-md-10">
+                        {{> flights/results-picker departure/flights}}
+                    </div>
+                </div>
+
+                <h2 class="block-flights-title2">Select return flight</h2>
+                <div class="row">
+                    <div class="col-12 col-md-2">
+                        <h3 class="block-flights-title3">{{returning.name}} to {{departure.name}}</h3>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        {{> flights/slider returning/days}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-2 visible-sm-up">
+                        {{> flights/filters }}
+                    </div>
+                    <div class="col-12 col-md-10">
+                        {{> flights/results-picker returning/flights}}
+                    </div>
+                </div>
+
+                <div class="text-center text-md-right">
+                    <br>
+                    <input type="hidden" name="fromCode" value="{{query/fromCode}}">
+                    <input type="hidden" name="toCode" value="{{query/toCode}}">
+                    <input type="hidden" name="dpa" value="{{query/dpa}}">
+                    <input type="hidden" name="dpb" value="{{query/dpb}}">
+                    <input type="hidden" name="passengers" value="{{query/passengers}}">
+                    <input class="btn btn-lg btn-primary" type="submit" value="Next">
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

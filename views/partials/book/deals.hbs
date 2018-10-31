@@ -1,0 +1,22 @@
+<div class="content content--search box">
+    <div class="content-wrapper">
+        <div class="block-cities">
+            <h2 class="block-cities-title">{{i18n "Deals.CitiesTitle"}}</h2>
+            <ul class="row block-cities-list">
+                {{#each destinations}}
+                    {{> book/deals-destinations this}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="block-deals">
+            <h2 class="block-deals-title">{{i18n "Deals.FlightsTitle"}}</h2>
+            <deals>
+                <ul class="row block-deals-list">
+                    {{#each flights}}
+                        {{> book/deals-price this}}
+                    {{/each}}
+                </ul>
+            </deals>
+        </div>
+    </div>
+</div>

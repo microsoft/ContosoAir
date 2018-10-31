@@ -1,0 +1,29 @@
+<div class="footer-background">
+    <div class="container container-footer">
+        <section class="block-flights">
+            <a class="redefine-search" href="/book">
+                Shop for another flight <span class="icon icon-arrow-right"></span>
+            </a>
+            <hr>
+            {{#if flights}}
+                <h1 class="block-flights-title">Booked flights</h1>
+            {{else}}
+                <h1 class="block-flights-title">No booked flights</h1>
+            {{/if}}
+            <form action="/book/flights" method="POST">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        {{> flights/results flights}}
+                    </div>
+                </div>
+
+                {{#if flights}}
+                    <div class="text-center text-md-right">
+                        <br>
+                        <a class="btn btn-lg btn-primary" href="/book">Get another flight</a>
+                    </div>
+                {{/if}}
+            </form>
+        </section>
+    </div>
+</div>

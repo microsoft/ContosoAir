@@ -1,0 +1,73 @@
+{{#with parting}}
+<h2 class="block-booking-title3 mb-4 mt-3">{{departDate}}</h2>
+<ul>
+    <li class="row">
+        <span class="col-3">FLIGHT</span>
+        <span class="col-3">DEPARTS</span>
+        <span class="col-3">ARRIVES</span>
+        <span class="col-3">SEAT</span>
+
+        <span class="col-12 mt-1"><hr class="block-booking-underline"></span>
+    </li>
+    
+    {{#each segments}}
+    <li class="row">
+        <span class="col-3">Flight {{flight}}</span>
+        <span class="col-3">
+            <span>{{fromCity}}</span>
+            <span>{{departTime}}</span>
+        </span>
+        <span class="col-3">
+            <span>{{toCity}}</span>
+            <span>{{arrivalTime}}</span>
+        </span>
+        <span class="col-3">
+            {{#each seats}}
+                {{this}}{{#unless @last}} | {{/unless}}
+            {{/each}}
+        </span>
+    </li>
+    {{/each}}
+</ul>
+<div>
+    <span class="block-booking-link">Distance:</span>
+    <span>{{distance}}</span> mi | 
+    <span class="block-booking-link">Duration:</span>
+    <span>{{duration}}</span>
+</div>
+<span class="row mt-3">
+    <span class="col-12">
+        <hr class="block-booking-underline">
+    </span>
+</span>
+{{/with}}
+
+{{#with returning}}
+<h2 class="block-booking-title3 mb-4 mt-3">{{departDate}}</h2>
+<ul>
+    {{#each segments}}
+    <li class="row">
+        <span class="col-3">Flight {{flight}}</span>
+        <span class="col-3">
+            <span>{{fromCity}}</span>
+            <span>{{departTime}}</span>
+        </span>
+        <span class="col-3">
+            <span>{{toCity}}</span>
+            <span>{{arrivalTime}}</span>
+        </span>
+        <span class="col-3">
+            {{#each seats}}
+                {{this}}{{#unless @last}} | {{/unless}}
+            {{/each}}
+        </span>
+    </li>
+    {{/each}}
+</ul>
+<div>
+    <span class="block-booking-link">Distance:</span>
+    <span>{{distance}}</span> mi |
+    <span class="block-booking-link">Duration:</span>
+    <span>{{duration}}</span>
+</div>
+{{/with}}

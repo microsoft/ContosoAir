@@ -1,0 +1,37 @@
+<section class="block-booking">
+    <div class="container">
+        <form action="/book/purchase" method="POST">
+            <a class="redefine-search" href="/book">
+                Shop for another flight <span class="icon icon-arrow-right"></span>
+            </a>
+            <hr>
+            <h1 class="block-booking-title">Flight Summary</h1>
+            <h2 class="block-booking-title2">Please review the information below before confirming your booking.</h2>
+            <span>
+                <h3 class="block-booking-title3">Passenger Name</h3>
+                <p class="block-booking-passenger">{{name}}</p>
+            </span>
+
+            <div class="row">
+                <div class="col-12 col-md-10">
+                    {{> purchase/summary summary}}
+                </div>
+                <div class="col-12 col-md-2 mt-5">
+                    {{> purchase/totalPrice totals}}
+                </div>
+                <span class="col-12 mt-3">
+                    <hr class="block-booking-underline">
+                </span>
+            </div>
+
+            <div class="text-center text-md-right block-booking-buttons">
+                <br>
+                <input name="departure" type="hidden" value="{{summary.departure.id}}">
+                <input name="returning" type="hidden" value="{{summary.returning.id}}">
+                <input name="passengers" type="hidden" value="{{totals.passengers}}">
+                <input class="btn btn-lg btn-primary" type="submit" value="Purchase">
+                <a class="btn btn-lg btn-primary btn-cancel" href="/book">Cancel</a>
+            </div>
+        </form>
+    </div>
+</section>

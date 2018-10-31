@@ -1,0 +1,67 @@
+<div class="block-search-form box">
+    <h2 class="block-search-form-title">Book a trip</h2>
+    <div class="block-search-form-options">
+        {{#each kinds}}
+            <div class="block-search-form-options-option {{#if active}}block-search-form-options-option--active{{/if}}">
+                {{text}}
+            </div>
+        {{/each}}
+    </div>
+    <form action="/book" method="POST">
+        <fieldset>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="fromCode">From</label>
+                        <select class="form-control" id="fromCode" name="fromCode">
+                            <option value="" disabled selected></option>
+                            {{#each airports}}
+                                <option value="{{code}}">{{city}} {{code}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="toCode">To</label>
+                        <select class="form-control" id="toCode" name="toCode">
+                            <option value="" disabled selected></option>
+                            {{#each airports}}
+                                <option value="{{code}}">{{city}} {{code}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group block-search-form-date">
+                        <label for="startDate">Depart date</label>
+                        <input class="form-control datepicker" id="dpa" name="dpa" data-start="{{today}}" placeholder="yyyy-mm-dd">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group block-search-form-date">
+                        <label for="endDate">Return Date</label>
+                        <input class="form-control datepicker" id="dpb" name="dpb" data-start="{{today}}" placeholder="yyyy-mm-dd">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <select class="form-control" id="passengers" name="passengers">
+                            {{#each passengers}}
+                                <option>{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-md btn-primary block-search-form-button" type="submit">Find flights</button>
+        </fieldset>
+    </form>
+</div>

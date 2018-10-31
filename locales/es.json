@@ -1,0 +1,61 @@
+{
+	"Title": "Contoso Air",
+	"Home": {
+		"HeroMessage": "Donde<br>quieres ir?"
+	},
+	"Deals": {
+		"CitiesTitle": "Recomendado para ti",
+		"FlightsTitle": "Detalles de vuelos",
+		"FlightsTo": "a ",
+		"FlightsPrice": "Compra por ",
+		"FlightsPriceFrom": "DESDE $",
+		"FlightsOneWay": "SOLO IDA",
+		"FlightsDatesButton": "Ver fechas"
+	},
+	"NavbarMenu": {
+		"Book": "Reserva",
+		"Booked": "Mis reservas",
+		"Login": "Login",
+		"Greeting": "Hola, <span>%s</span>"
+	},
+	"Footer": {
+		"About": {
+			"Title": "ACERCA CONTOSO",
+			"Link_1": "Quien somos",
+			"Link_2": "Contactanos",
+			"Link_3": "Consejos de viaje",
+			"Link_4": "Compromiso del cliente",
+			"Link_5": "Opiniones del cliente",
+			"Link_6": "Aviso de privacidad"
+		},
+		"Customer": {
+			"Title": "SERVICIO AL CLIENTE",
+			"Link_1": "Carreras profesionales",
+			"Link_2": "Notas legales",
+			"Link_3": "Noticias",
+			"Link_4": "Relaciones con inversores",
+			"Link_5": "Contrato de transporte",
+			"Link_6": "Plan de retrasos",
+			"Link_7": "Mapa web"
+		},
+		"Products": {
+			"Title": "SERVICIOS Y PRODUCTOS",
+			"Link_1": "Tarifas de servicios opcionales",
+			"Link_2": "Viajes de empresa",
+			"Link_3": "Agentes de viajes",
+			"Link_4": "Mercancias",
+			"Link_5": "Vales regalo",
+			"Link_6": "Síguenos"
+		},
+		"Copyright": "Esta web ha sido creada por Microsoft para propositos de demostración."
+	},
+	"Login": {
+		"Title": "Login",
+		"Username": "Nombre de usuario",
+		"Password": "Contraseña",
+        "Error": {
+            "MissingCredentials": "Credenciales invalidas",
+            "InvalidUsername": "Nombre de usuario vacío"
+        }
+	}
+}
