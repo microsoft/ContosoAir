@@ -82,7 +82,7 @@
 	"outputs": {
 		"web": {
       			"type": "string",
-     			 "value": "[variables('website_name')]"
+     			 "value": "[variables('site_web_name')]"
     			}
 		}
 }
