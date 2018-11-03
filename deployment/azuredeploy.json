@@ -80,5 +80,9 @@
 		}
 	],
 	"outputs": {
-	}
+		"web": {
+      			"type": "string",
+     			 "value": "[variables('site_web_name')]"
+    			}
+		}
 }
