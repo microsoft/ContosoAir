@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+const dotenv = require('dotenv').config();
 const app = require('./app');
 const debug = require('debug')('contoso-air-dev:server');
 const http = require('http');

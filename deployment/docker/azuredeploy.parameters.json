@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"p_environment": {
+			"value": "dev"
+		},
+		"p_site_prefix": {
+			"value": "githubci"
+		},
+		"p_comosdb_name":{
+			"value": "db"
+		},
+		"p_containerregistry_name": {
+			"value": "acr"
+		},
+		"p_containersite_plan_name": {
+			"value": "cplan"
+		},
+		"p_containersite_web_name": {
+			"value": "cweb"
+		}
+	}
+}
