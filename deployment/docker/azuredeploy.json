@@ -1,0 +1,170 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"p_environment": {
+			"type": "string"
+		},
+		"p_separator": {
+			"defaultValue": "-",
+			"type": "string"
+		},
+		"p_site_prefix": {
+			"defaultValue": "githubci",
+			"type": "string"
+		},
+		"p_comosdb_name": {
+			"defaultValue": "db",
+			"type": "string"
+		},
+		"p_containerregistry_name": {
+			"defaultValue": "acr",
+			"type": "string"
+		},
+		"p_containersite_plan_name": {
+			"defaultValue": "cplan",
+			"type": "string"
+		},
+		"p_containersite_web_name": {
+			"defaultValue": "cweb",
+			"type": "string"
+		}
+	},
+	"variables": {
+		"comosdb_default_name": "[concat(parameters('p_site_prefix'), parameters('p_separator'), parameters('p_comosdb_name'), parameters('p_separator'), parameters('p_environment'))]",
+		"containerregistry_name": "[concat(parameters('p_site_prefix'), parameters('p_separator'), parameters('p_containerregistry_name'), parameters('p_separator'), parameters('p_environment'))]",
+		"containersite_plan_name": "[concat(parameters('p_site_prefix'), parameters('p_containersite_plan_name'), parameters('p_environment'))]",
+		"containersite_web_name": "[concat(parameters('p_site_prefix'), parameters('p_separator'), parameters('p_containersite_web_name'), parameters('p_separator'), parameters('p_environment'))]"
+	},
+	"resources": [
+		{
+			"type": "Microsoft.ContainerRegistry/registries",
+			"sku": {
+				"name": "Basic",
+				"tier": "Basic"
+			},
+			"name": "[variables('containerregistry_name')]",
+			"apiVersion": "2017-10-01",
+			"location": "[resourceGroup().location]",
+			"tags": {},
+			"scale": null,
+			"properties": {
+				"adminUserEnabled": true
+			},
+			"dependsOn": []
+		},
+		{
+			"type": "Microsoft.DocumentDB/databaseAccounts",
+			"kind": "MongoDB",
+			"name": "[variables('comosdb_default_name')]",
+			"apiVersion": "2015-04-08",
+			"location": "[resourceGroup().location]",
+			"tags": {
+				"defaultExperience": "MongoDB"
+			},
+			"scale": null,
+			"properties": {
+				"name": "[variables('comosdb_default_name')]",
+				"databaseAccountOfferType": "Standard",
+				"consistencyPolicy": {
+					"defaultConsistencyLevel": "Session",
+					"maxIntervalInSeconds": 5,
+					"maxStalenessPrefix": 100
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"type": "Microsoft.Web/serverfarms",
+			"sku": {
+				"name": "S1",
+				"tier": "Standard",
+				"size": "S1",
+				"family": "S",
+				"capacity": 1
+			},
+			"kind": "linux",
+			"name": "[variables('containersite_plan_name')]",
+			"apiVersion": "2016-09-01",
+			"location": "[resourceGroup().location]",
+			"scale": null,
+			"properties": {
+				"name": "[variables('containersite_plan_name')]",
+				"workerTierName": null,
+				"adminSiteName": null,
+				"hostingEnvironmentProfile": null,
+				"perSiteScaling": false,
+				"reserved": true,
+				"targetWorkerCount": 0,
+				"targetWorkerSizeId": 0
+			},
+			"dependsOn": []
+		},
+		{
+			"type": "Microsoft.Web/sites",
+			"kind": "app,linux,container",
+			"name": "[variables('containersite_web_name')]",
+			"apiVersion": "2016-08-01",
+			"location": "[resourceGroup().location]",
+			"scale": null,
+			"properties": {
+				"enabled": true,
+				"hostNameSslStates": [
+					{
+						"name": "[concat(variables('containersite_web_name'),'.azurewebsites.net')]",
+						"sslState": "Disabled",
+						"virtualIP": null,
+						"thumbprint": null,
+						"toUpdate": null,
+						"hostType": "Standard"
+					},
+					{
+						"name": "[concat(variables('containersite_web_name'),'.scm.azurewebsites.net')]",
+						"sslState": "Disabled",
+						"virtualIP": null,
+						"thumbprint": null,
+						"toUpdate": null,
+						"hostType": "Repository"
+					}
+				],
+				"serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('containersite_plan_name'))]",
+				"reserved": true,
+				"siteConfig": {
+					"appSettings": [
+						{
+							"name": "COSMOS_DB_NAME",
+							"value": "[variables('comosdb_default_name')]"
+						},
+						{
+							"name": "COSMOS_DB_AUTH_KEY",
+							"value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('comosdb_default_name')), '2015-04-08').primaryMasterKey]"
+						},
+						{
+							"name": "WEBSITE_NODE_DEFAULT_VERSION",
+							"value": "8.9.4"
+						}
+					]
+				},
+				"scmSiteAlsoStopped": false,
+				"hostingEnvironmentProfile": null,
+				"clientAffinityEnabled": true,
+				"clientCertEnabled": false,
+				"hostNamesDisabled": false,
+				"containerSize": 0,
+				"dailyMemoryTimeQuota": 0,
+				"cloningInfo": null,
+				"httpsOnly": false
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Web/serverfarms', variables('containersite_plan_name'))]",
+				"[concat('Microsoft.DocumentDB/databaseAccounts/', variables('comosdb_default_name'))]"
+			]
+		}
+	],
+	"outputs": {
+		"containers-web": {
+			"type": "string",
+			"value": "[variables('containersite_web_name')]"
+		}
+	}
+}
