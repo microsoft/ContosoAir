@@ -8,6 +8,7 @@ Runs a nodejs server (Express v4.16) that stores customer booked flights in a Co
 * Node v8.9.4 or later
 * Azure CosmosDb
 
+
 ## Local Environment Setup
 
 This project uses ES6, and has been tested with nodejs v8.9.4  
