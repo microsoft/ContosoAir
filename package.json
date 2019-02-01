@@ -14,7 +14,7 @@
     "testResultsProcessor": "jest-junit-reporter",
     "collectCoverage": true,
     "coverageReporters": [
-      "cobertura", 
+      "cobertura",
       "html"
     ]
   },
