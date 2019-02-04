@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./server.js --production",
     "local:build": "webpack --env.NODE_ENV=development --mode=development",
+    "build": "exit 0",
     "unit-test": "jest",
     "int-test": "jest --testRegex=.*\\.ispec\\.js$",
     "test": "jest --testRegex=.*\\.i?spec\\.js$",
