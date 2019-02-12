@@ -1,5 +1,5 @@
 
-[![Build Status](https://dev.azure.com/sachin77/sachin77-contosoair1/_apis/build/status/hsachinraj.ContosoAir?branchName=master)](https://dev.azure.com/sachin77/sachin77-contosoair1/_build/latest?definitionId=2&branchName=master)
+
 
 # Microsoft.Github CI Demo
 
