@@ -1,5 +1,5 @@
 
-
+[![Build Status](https://rstepan.visualstudio.com/TRTEST/_apis/build/status/TRTEST-CI?branchName=master)](https://rstepan.visualstudio.com/TRTEST/_build/latest?definitionId=6&branchName=master)
 
 # Microsoft.Github CI Demo
 
