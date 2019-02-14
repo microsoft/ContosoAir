@@ -1,5 +1,5 @@
 
-
+[![Build Status](https://dev.azure.com/uheung/uheung/_apis/build/status/uheung.ContosoAir?branchName=master)](https://dev.azure.com/uheung/uheung/_build/latest?definitionId=1&branchName=master)
 
 # Microsoft.Github CI Demo
 
