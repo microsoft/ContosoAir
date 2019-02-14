@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/sachin77/contosoair-readylab/_apis/build/status/contosoair-readylab-CI?branchName=master)](https://dev.azure.com/sachin77/contosoair-readylab/_build/latest?definitionId=5&branchName=master)
 
 
 # Microsoft.Github CI Demo
