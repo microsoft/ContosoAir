@@ -12,8 +12,8 @@ action "Deploy Webapp" {
     "AZURE_SERVICE_APP_ID",
   ]
   env = {
-    APP_SERVICE_PLAN = "myAppServicePlan"
-    RESOURCE_GROUP = "myLinuxResourceGroup"
+    APP_SERVICE_PLAN = "ServicePlan6f5a4cc4-8851"
+    RESOURCE_GROUP = "sachinsample"
     WEBAPP_NAME = "myWebApp"
   }
 }
