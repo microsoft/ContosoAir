@@ -1,11 +1,17 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Deploy Webapp"]
+  resolves = ["Create Webapp"]
 }
 
-action "Deploy Webapp" {
+action "GitHub Action for Azure" {
+  uses = "Azure/github-actions/cli@7e91de5a41b40f2db181215fbbeaf6a2155b9f38"
+  args = "zip -r WebApp.zip ."
+}
+
+action "Create Webapp" {
   uses = "actions/azure@master"
-  args = "webapp create --resource-group $RESOURCE_GROUP --plan $APP_SERVICE_PLAN --name $WEBAPP_NAME"
+  needs = "GitHub Action for Azure"
+  args = ["webapp create --resource-group $RESOURCE_GROUP --plan $APP_SERVICE_PLAN --name $WEBAPP_NAME", "az webapp deployment source config-zip -g $RESOURCE_GROUP -n $WEBAPP_NAME   --src ./WebApp.zip"]
   secrets = [
     "AZURE_SERVICE_PASSWORD",
     "AZURE_SERVICE_TENANT",
