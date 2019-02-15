@@ -4,6 +4,7 @@ require('bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css');
 
 require('./scss/main.scss');
 
+
 $(document).ready(function(){
     var today = $('.datepicker').data('start') || new Date();
     var options = {
