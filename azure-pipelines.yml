@@ -11,7 +11,7 @@ steps:
       command: 'install'
   - script:
       npm test
-    displayName: 'Run unit tests'
+    displayName: 'Run unit tests in CI'
     continueOnError: true
 
   - task: PublishTestResults@2
