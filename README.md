@@ -31,6 +31,7 @@ This will run locally the server and attach to the CosmosDb Endpoint using mongo
 
 In order to create the Azure deploy there is an ARM template located at deployment folder.
 
+
 ARM template parameter | Usage | e.g.
 --- | --- | ---
 p_environment | set an environment suffix | `dev`
