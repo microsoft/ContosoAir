@@ -14,6 +14,6 @@ action "Deploy Webapp" {
   env = {
     APP_SERVICE_PLAN = "ServicePlan6f5a4cc4-8851"
     RESOURCE_GROUP = "sachinsample"
-    WEBAPP_NAME = "myWebApp"
+    WEBAPP_NAME = "myWebAppsachin0215"
   }
 }
