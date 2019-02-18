@@ -14,7 +14,7 @@ class BookFormService {
             ],
             today: moment().toDate(),
             passengers: [1, 2, 3, 4, 5],
-            airports: this._airports.getAll().sort((first, second) => first.city.localeCompare(second.city))
+            airports: this._airports.getAll()
         };
     }
 }
