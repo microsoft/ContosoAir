@@ -8,7 +8,7 @@ class AirportsService {
     }
 
     getAll(){
-        return this._airports.filter(a => a.code).map(avoidEmptyCity);
+        return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((first, second) => first.city.localeCompare(second.city));
     }
 
     getByCode(code) {
