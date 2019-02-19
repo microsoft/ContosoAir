@@ -16,10 +16,10 @@ class BookFormService {
             passengers: [1, 2, 3, 4, 5],
  airports: this._airports.getAll()
         };
+    }
 
-        getAll(){
-            return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
-        }
+    getAll(){
+        return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
     }
 }
 
