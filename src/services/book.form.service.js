@@ -14,11 +14,11 @@ class BookFormService {
             ],
             today: moment().toDate(),
             passengers: [1, 2, 3, 4, 5],
- airports: this._airports.getAll()
+ airports: this._airports.getAll2()
         };
     }
 
-    getAll(){
+    getAll2(){
         return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
     }
 
