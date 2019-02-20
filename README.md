@@ -1,5 +1,6 @@
 [![Build Status](https://dev.azure.com/henriquemsft/test/_apis/build/status/hjgraca.ContosoAir?branchName=master)](https://dev.azure.com/henriquemsft/test/_build/latest?definitionId=72&branchName=master)
 
+test
 
 # Microsoft.Github CI Demo
 
