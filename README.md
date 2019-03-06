@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/risilvei/GitHub/_apis/build/status/ritascosta.ContosoAir?branchName=master)](https://dev.azure.com/risilvei/GitHub/_build/latest?definitionId=26&branchName=master)
 
 
 # Microsoft.Github CI Demo
