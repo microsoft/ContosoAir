@@ -1,4 +1,5 @@
 
+[![Build Status](https://dev.azure.com/ARCANOACN4/Azure/_apis/build/status/arnulfocasique.ContosoAir?branchName=master)](https://dev.azure.com/ARCANOACN4/Azure/_build/latest?definitionId=1&branchName=master)
 
 
 # Microsoft.Github CI Demo
