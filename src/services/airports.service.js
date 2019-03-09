@@ -7,9 +7,11 @@ class AirportsService {
         this._airports = airports;
     }
 
+    
     getAll(){
-        return this._airports.filter(a => a.code).map(avoidEmptyCity);
-    }
+            return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
+        }
+   
 
     getByCode(code) {
         return avoidEmptyCity(this._airports.find(a => a.code == code));
