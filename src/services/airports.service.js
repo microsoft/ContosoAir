@@ -8,6 +8,7 @@ class AirportsService {
     }
 
     getAll(){
+        //changing sort order
       return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
     }
 
