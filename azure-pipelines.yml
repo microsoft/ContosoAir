@@ -8,7 +8,17 @@ pool:
   vmImage: 'ubuntu-16.04' 
   
 trigger: 
+  branches:
+    include:
     - master
+    - azure-pipelines
+  pr:
+    - azure-pipelines  
+
+resources:
+  containers:
+  - container: node
+    image: 8.15-jessie
 
 steps:
   - task: Npm@1
