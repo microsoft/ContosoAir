@@ -12,8 +12,7 @@ trigger:
     include:
     - master
     - azure-pipelines
-  pr:
-    - azure-pipelines  
+ 
 
 resources:
   containers:
