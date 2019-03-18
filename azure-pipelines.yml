@@ -15,7 +15,6 @@ trigger:
   branches:
     include:
     - master
-    - azure-pipelines
 pr:
  autoCancel: true
  branches:
