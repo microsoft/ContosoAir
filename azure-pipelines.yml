@@ -16,7 +16,13 @@ trigger:
     include:
     - master
     - azure-pipelines
- 
+pr:
+ autoCancel: true
+ branches:
+  include: 
+   - azure-pipelines
+   - master
+
 jobs:
 - job: RunNodeBuild
   container: nodejs
@@ -65,7 +71,7 @@ jobs:
 - job: RunAssetPublish
   container: ubuntu
   dependsOn: RunNodeBuild
-  condition: succeeded()
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   pool:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
 
