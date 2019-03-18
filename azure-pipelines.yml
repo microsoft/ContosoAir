@@ -76,13 +76,13 @@ jobs:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
 
   steps:
-  - task: Docker@0
-    displayName: 'Build an image'
+  - task: Docker@1
     inputs:
-      azureSubscription: 'azure'
-      azureContainerRegistry: aksappsacr.azurecr.io
-      imageName: 'aksappsacr.azurecr.io/contoso/contosoair:$(Build.BuildId)'
-      includeLatestTag: true
+      command: login
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+    displayName: Docker login
+ 
   - bash: |
       set -ex
       sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
