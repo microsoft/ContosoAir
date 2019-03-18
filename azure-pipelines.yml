@@ -47,15 +47,27 @@ jobs:
         codeCoverageTool: Cobertura
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
-        
+
+    - script:
+        apt-get install zip
+      displayName: 'add zip'
+    
+    - task: ArchiveFiles@2
+      displayName: 'Archive sources'
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
+        includeRootFolder: false
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
+
     - task: PublishBuildArtifacts@1
       inputs:
-       pathtoPublish: '$(System.DefaultWorkingDirectory)'
-       artifactName: drop
+        pathtoPublish: '$(System.ArtifactStagingDirectory)'
+        artifactName: drop
 
 - job: RunAssetPublish
   container: ubuntu
   dependsOn: RunNodeBuild
+  condition: succeeded()
   pool:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
 
@@ -66,12 +78,3 @@ jobs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
 
-    - task: CopyFiles@2
-      displayName: 'Copy ARM templates'
-      inputs:
-        SourceFolder: deployment
-        Contents: '*.json'
-        TargetFolder: '$(build.artifactstagingdirectory)/Templates'
-
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop' 
