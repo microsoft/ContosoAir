@@ -54,11 +54,12 @@ jobs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
         archiveType: tar
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar' 
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz' 
+        verbose: true
 
     - task: PublishBuildArtifacts@1
       inputs:
-        pathtoPublish: '$(System.ArtifactStagingDirectory)'
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: drop
 
 - job: RunAssetPublish
