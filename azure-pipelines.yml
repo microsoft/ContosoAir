@@ -3,23 +3,21 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+resources:
+  containers:
+  - container: nodejs
+    image: node/8.15-jessie
 
-pool:  
-  vmImage: 'ubuntu-16.04'
-  
+pool:
+  vmImage: 'Ubuntu 16.04'
+
 trigger: 
   branches:
     include:
     - master
     - azure-pipelines
  
-
-resources:
-  containers:
-  - container: node
-    image: 8.15-jessie
-
-container: node
+container: nodejs
       
 steps:
   - script: 
