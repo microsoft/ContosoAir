@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta1
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: contososvc
+spec:
+  selector:
+    app: contosoapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+
+kind: Deployment
+metadata:
+  name: contosoapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: contosoapp
+    spec:
+      containers:
+      - name: contosoapp
+        image: lenisha/contosoair:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: COSMOS_DB_AUTH_KEY
+            valueFrom:
+              secretKeyRef:
+                name: cosmos
+                key: COSMOS_DB_AUTH_KEY
+          - name: COSMOS_DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: cosmos
+                key: COSMOS_DB_NAME
+        

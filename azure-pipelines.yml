@@ -53,16 +53,11 @@ jobs:
         codeCoverageTool: Cobertura
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
-   
-    - task: ArchiveFiles@2
-      displayName: 'Archive sources'
+    - task: CopyFiles@2
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)'
-        includeRootFolder: false
-        archiveType: tar
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar.gz' 
-        verbose: true
-
+        contents: 'deployment\**'
+        targetFolder: $(Build.ArtifactStagingDirectory)
+        
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
