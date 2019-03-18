@@ -8,7 +8,7 @@ resources:
   - container: nodejs
     image: node:8.15-jessie
   - container: ubuntu
-    image: ubuntu:16.04
+    image: docker:18.09
 
 
 trigger: 
@@ -74,7 +74,6 @@ jobs:
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   pool:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
-
 
   steps:
   - task: Docker@0
