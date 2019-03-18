@@ -6,7 +6,7 @@
 resources:
   containers:
   - container: nodejs
-    image: node/8.15-jessie
+    image: node:8.15-jessie
 
 pool:
   #vmImage: 'Ubuntu 16.04'
