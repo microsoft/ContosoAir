@@ -69,10 +69,14 @@ jobs:
   pool:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
 
+
   steps:
-    - task: ArchiveFiles@2
-      displayName: 'Build docker image'
-      inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)'
-        includeRootFolder: false
+  - task: Docker@0
+    displayName: 'Build an image'
+    inputs:
+      azureSubscription: 'azure'
+      azureContainerRegistry: aksappsacr.azurecr.io
+      imageName: 'aksappsacr.azurecr.io/contoso/contosoair:$(Build.BuildId)'
+      includeLatestTag: true
+
 
