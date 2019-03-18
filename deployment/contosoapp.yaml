@@ -5,6 +5,7 @@ apiVersion: v1
 metadata:
   name: contososvc
 spec:
+  type: LoadBalancer
   selector:
     app: contosoapp
   ports:
