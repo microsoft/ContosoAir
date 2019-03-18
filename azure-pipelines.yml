@@ -7,6 +7,8 @@ resources:
   containers:
   - container: nodejs
     image: node:8.15-jessie
+  - container: ubuntu
+    image: ubuntu:16.04
 
 pool:
   #vmImage: 'Ubuntu 16.04'
@@ -18,44 +20,49 @@ trigger:
     - master
     - azure-pipelines
  
-container: nodejs
-      
-steps:
-  - script: 
-      npm install 
-    displayName: 'Run npm install'     
+jobs:
+- job: RunNode
+  container: nodejs
 
-  - script:
-      npm test
-    displayName: 'Run unit tests'
-    continueOnError: true
+  steps:
+    - script: 
+        npm install 
+      displayName: 'Run npm install'     
 
-  - task: PublishTestResults@2
-    displayName: 'Publish Test Results'
-    condition: succeededOrFailed()
-    inputs:
-      testResultsFiles: '$(System.DefaultWorkingDirectory)/test-report.xml'
+    - script:
+        npm test
+      displayName: 'Run unit tests'
+      continueOnError: true
 
-  - task: PublishCodeCoverageResults@1
-    displayName: 'Publish Code Coverage'
-    condition: in(variables['Agent.JobStatus'], 'Succeeded')
-    inputs:
-      codeCoverageTool: Cobertura
-      summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
-      reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results'
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: '$(System.DefaultWorkingDirectory)/test-report.xml'
 
-  - task: ArchiveFiles@2
-    displayName: 'Archive sources'
-    inputs:
-      rootFolderOrFile: '$(Build.SourcesDirectory)'
-      includeRootFolder: false
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish Code Coverage'
+      condition: in(variables['Agent.JobStatus'], 'Succeeded')
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
+        reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
 
-  - task: CopyFiles@2
-    displayName: 'Copy ARM templates'
-    inputs:
-      SourceFolder: deployment
-      Contents: '*.json'
-      TargetFolder: '$(build.artifactstagingdirectory)/Templates'
+- job: RunUtility 
+  container: ubuntu
+  steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive sources'
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
+        includeRootFolder: false
 
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop' 
+    - task: CopyFiles@2
+      displayName: 'Copy ARM templates'
+      inputs:
+        SourceFolder: deployment
+        Contents: '*.json'
+        TargetFolder: '$(build.artifactstagingdirectory)/Templates'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop' 
