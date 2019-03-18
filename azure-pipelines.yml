@@ -8,7 +8,7 @@ resources:
   - container: nodejs
     image: node:8.15-jessie
   - container: ubuntu
-    image: docker:18.09
+    image: lenisha/ubuntu16-docker:latest
 
 
 trigger: 

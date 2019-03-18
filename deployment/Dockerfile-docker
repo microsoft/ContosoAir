@@ -1,0 +1,35 @@
+#
+# ---- Base Node ----
+FROM ubuntu:16.04
+
+# Install basic command-line utilities
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    curl \
+    dnsutils \
+    file \
+    ftp \
+    iproute2 \
+    iputils-ping \
+    locales \
+    openssh-client \
+    rsync\
+    shellcheck \
+    sudo \
+    telnet \
+    time \
+    unzip \
+    wget \
+    zip \
+    tzdata \
+    ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+ENV DOCKER_CHANNEL stable
+ENV DOCKER_VERSION 18.09.0
+
+RUN set -ex \
+ && curl -fL "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/`uname -m`/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
+ && tar --extract --file docker.tgz --strip-components 1 --directory /usr/local/bin \
+ && rm docker.tgz \
+ && docker -v
