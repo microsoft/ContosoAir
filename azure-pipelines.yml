@@ -49,7 +49,7 @@ jobs:
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
 
     - script:
-        apt-get install zip
+        sudo apt-get install zip
       displayName: 'add zip'
     
     - task: ArchiveFiles@2
