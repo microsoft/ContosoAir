@@ -9,7 +9,8 @@ resources:
     image: node/8.15-jessie
 
 pool:
-  vmImage: 'Ubuntu 16.04'
+  #vmImage: 'Ubuntu 16.04'
+  name: 'ubuntu18'
 
 trigger: 
   branches:
