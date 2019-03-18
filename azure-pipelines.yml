@@ -19,10 +19,13 @@ resources:
   - container: node
     image: 8.15-jessie
 
+container: node
+      
 steps:
-  - task: Npm@1
-    inputs:
-      command: 'install'
+  - script: 
+      npm install 
+    displayName: 'Run npm install'     
+
   - script:
       npm test
     displayName: 'Run unit tests'
