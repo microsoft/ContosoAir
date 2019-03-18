@@ -5,7 +5,7 @@
 
 
 pool:  
-  name: 'akspool'
+  vmImage: 'ubuntu-16.04'
   
 trigger: 
   branches:
