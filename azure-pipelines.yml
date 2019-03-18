@@ -10,9 +10,6 @@ resources:
   - container: ubuntu
     image: ubuntu:16.04
 
-pool:
-  #vmImage: 'Ubuntu 16.04'
-  name: 'ubuntu18'
 
 trigger: 
   branches:
@@ -23,6 +20,9 @@ trigger:
 jobs:
 - job: RunNode
   container: nodejs
+  pool:
+    #vmImage: 'Ubuntu 16.04'
+    name: 'ubuntu18'
 
   steps:
     - script: 
