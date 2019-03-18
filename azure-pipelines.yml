@@ -89,3 +89,11 @@ jobs:
       sudo usermod -a -G docker $(whoami)
     displayName: Docker socket
 
+  - task: Docker@1
+    inputs:
+      command: build
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      dockerFile: Dockerfile
+      imageName: lenisha/contosoair:latest
+    displayName: Docker build
