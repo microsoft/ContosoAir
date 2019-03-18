@@ -83,5 +83,9 @@ jobs:
       azureContainerRegistry: aksappsacr.azurecr.io
       imageName: 'aksappsacr.azurecr.io/contoso/contosoair:$(Build.BuildId)'
       includeLatestTag: true
-
+  - bash: |
+      set -ex
+      sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
+      sudo usermod -a -G docker $(whoami)
+    displayName: Docker socket
 
