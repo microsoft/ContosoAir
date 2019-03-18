@@ -1,0 +1,47 @@
+# prereq: create secret 
+# kubectl create secret generic vsts-pat \
+#  --from-literal=VSTS_TOKEN=$VSTS_TOKEN \
+#  --from-literal=VSTS_ACCOUNT=$VSTS_ACCOUNT
+# https://alwaysupalwayson.blogspot.com/2018/05/host-your-private-vsts-linux-agent-in.html
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: linux-vsts-agent
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: linux-vsts-agent
+    spec:
+      containers:
+      - name: linux-vsts-agent
+        image: mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce
+        env:
+          - name: VSTS_ACCOUNT
+            valueFrom:
+              secretKeyRef:
+                name: vsts-pat
+                key: VSTS_ACCOUNT
+          - name: VSTS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: vsts-pat
+                key: VSTS_TOKEN
+          - name: VSTS_POOL
+            value: akspool
+          - name: VSTS_WORK
+            value: /_work
+        volumeMounts:
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
+        - name: workspace
+          mountPath: /_work
+      volumes:
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
+      - name: workspace
+        persistentVolumeClaim:
+          claimName: azurefile-claim

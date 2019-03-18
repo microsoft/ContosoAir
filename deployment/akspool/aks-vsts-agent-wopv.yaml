@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: linux-vsts-agent
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: linux-vsts-agent
+    spec:
+      containers:
+      - name: linux-vsts-agent
+        image: microsoft/vsts-agent:latest
+        env:
+          - name: VSTS_ACCOUNT
+            valueFrom:
+              secretKeyRef:
+                name: vsts-pat
+                key: VSTS_ACCOUNT
+          - name: VSTS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: vsts-pat
+                key: VSTS_TOKEN
+          - name: VSTS_POOL
+            value: Default
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-volume
+      volumes:
+      - name: docker-volume
+        hostPath:
+          path: /var/run/docker.sock
