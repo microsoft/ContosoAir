@@ -18,7 +18,7 @@ trigger:
     - azure-pipelines
  
 jobs:
-- job: RunNode
+- job: RunNodeBuild
   container: nodejs
   pool:
     #vmImage: 'Ubuntu 16.04'
@@ -47,9 +47,18 @@ jobs:
         codeCoverageTool: Cobertura
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
+        
+    - task: PublishBuildArtifacts@1
+      inputs:
+       pathtoPublish: '$(System.DefaultWorkingDirectory)'
+       artifactName: drop
 
-- job: RunUtility 
+- job: RunAssetPublish
   container: ubuntu
+  dependsOn: RunNodeBuild
+  pool:
+    name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
+
   steps:
     - task: ArchiveFiles@2
       displayName: 'Archive sources'
