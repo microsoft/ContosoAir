@@ -55,7 +55,8 @@ jobs:
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
     - task: CopyFiles@2
       inputs:
-        contents: 'deployment\**'
+        Contents: |
+         deployment\**
         targetFolder: $(Build.ArtifactStagingDirectory)
         
     - task: PublishBuildArtifacts@1
