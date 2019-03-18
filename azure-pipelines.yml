@@ -71,7 +71,7 @@ jobs:
 
   steps:
     - task: ArchiveFiles@2
-      displayName: 'Archive sources'
+      displayName: 'Build docker image'
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
