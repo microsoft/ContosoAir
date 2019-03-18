@@ -1,8 +1,7 @@
-# Node.js
-# Build a general Node.js project with npm.
+# Node.js with webpack
+# Build a Node.js project using the webpack CLI.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 resources:
   containers:
   - container: nodejs
@@ -119,5 +118,4 @@ jobs:
       command: push
       containerRegistryType: Container Registry
       dockerRegistryEndpoint: DockerHub
-      imageName: lenisha/contosoair:$(Build.BuildId)     
-         
+      imageName: lenisha/contosoair:$(Build.BuildId)    
