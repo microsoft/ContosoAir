@@ -1,7 +1,5 @@
-apiVersion: apps/v1beta1
-
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: contososvc
 spec:
@@ -12,7 +10,8 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
-
+---
+apiVersion: v1
 kind: Deployment
 metadata:
   name: contosoapp
