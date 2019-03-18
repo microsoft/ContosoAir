@@ -47,17 +47,14 @@ jobs:
         codeCoverageTool: Cobertura
         summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
         reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
-
-    - script:
-        sudo apt-get install zip
-      displayName: 'add zip'
-    
+   
     - task: ArchiveFiles@2
       displayName: 'Archive sources'
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
+        archiveType: tar
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tar' 
 
     - task: PublishBuildArtifacts@1
       inputs:
