@@ -107,10 +107,17 @@ jobs:
       imageName: lenisha/contosoair:latest
       arguments: lenisha/contosoair:$(Build.BuildId)
   - task: Docker@1
-    displayName: Docker Push
+    displayName: Docker Push Latest
     inputs:
       command: push
       containerRegistryType: Container Registry
       dockerRegistryEndpoint: DockerHub
       imageName: lenisha/contosoair:latest
-      arguments: lenisha/contosoair:$(Build.BuildId)    
+  - task: Docker@1
+    displayName: Docker Push
+    inputs:
+      command: push
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      imageName: lenisha/contosoair:$(Build.BuildId)     
+         
