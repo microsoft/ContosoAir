@@ -21,6 +21,10 @@ steps:
       codeCoverageTool: Cobertura
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
       reportDirectory: $(System.DefaultWorkingDirectory)/coverage
+  - task: whitesource.ws-bolt.bolt.wss.WhiteSource Bolt@18
+    displayName: 'WhiteSource Bolt'
+    inputs:
+      cwd: WebGoat
   - task: ArchiveFiles@2
     displayName: 'Archive sources'
     inputs:
