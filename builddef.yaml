@@ -24,7 +24,7 @@ steps:
   - task: whitesource.ws-bolt.bolt.wss.WhiteSource Bolt@18
     displayName: 'WhiteSource Bolt'
     inputs:
-      cwd: WebGoat
+      cwd: $(Build.SourcesDirectory)
   - task: ArchiveFiles@2
     displayName: 'Archive sources'
     inputs:
