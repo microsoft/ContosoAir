@@ -1,5 +1,5 @@
 
-
+[![Build Status](https://dev.azure.com/ishen0622/demogithublab271/_apis/build/status/Shenderchuk.ContosoAir?branchName=master)](https://dev.azure.com/ishen0622/demogithublab271/_build/latest?definitionId=3&branchName=master)
 
 # Microsoft.Github CI Demo
 
