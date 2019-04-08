@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/keyronguillen/ContosoAir/_apis/build/status/keyronguillen.ContosoAir?branchName=master)](https://dev.azure.com/keyronguillen/ContosoAir/_build/latest?definitionId=27&branchName=master)
 
 
 # Microsoft.Github CI Demo
