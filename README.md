@@ -1,7 +1,7 @@
 [![Build Status](https://dev.azure.com/sasoysal/csmdemo1/_apis/build/status/salihaispir.ContosoAir?branchName=master)](https://dev.azure.com/sasoysal/csmdemo1/_build/latest?definitionId=38&branchName=master)
 
 
-# Microsoft.Github CI Demo
+# Microsoft.Github CI Demo test
 
 Demo website application for Contoso Air.  
 Runs a nodejs server (Express v4.16) that stores customer booked flights in a CosmosDb database.
