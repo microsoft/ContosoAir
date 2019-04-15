@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/sasoysal/csmdemo1/_apis/build/status/salihaispir.ContosoAir?branchName=master)](https://dev.azure.com/sasoysal/csmdemo1/_build/latest?definitionId=38&branchName=master)
 
 
 # Microsoft.Github CI Demo
