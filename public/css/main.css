@@ -7522,6 +7522,11 @@ a.text-dark:hover, a.text-dark:focus {
       .block-flights .block-flights-results .block-flights-results-list-item .block-flights-results-list-item-price input {
         display: block;
         margin: 0 auto; }
+    .block-flights .block-flights-results .block-flights-results-list-item .block-flights-results-list-item-passengers {
+      display: inline-block;
+      font-size: 1.2rem;
+      text-align: center;
+      width: 4rem; }
 
 @media (min-width: 768px) {
   .block-flights {

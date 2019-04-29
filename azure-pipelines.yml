@@ -79,11 +79,11 @@ jobs:
       dockerRegistryEndpoint: DockerHub
     displayName: Docker login
  
-  - bash: |
-      set -ex
-      sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
-      sudo usermod -a -G docker $(whoami)
-    displayName: Docker socket
+  #- bash: |
+  #    set -ex
+  #    sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
+  #    sudo usermod -a -G docker $(whoami)
+  #  displayName: Docker socket
 
   - task: Docker@1
     inputs:
