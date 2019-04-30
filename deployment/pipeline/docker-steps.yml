@@ -1,0 +1,47 @@
+steps:
+  - task: Docker@1
+    inputs:
+      command: login
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+    displayName: Docker login
+ 
+ # prior to agent version 2.149
+  #- bash: |
+  #    set -ex
+  #    sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
+  #    sudo usermod -a -G docker $(whoami)
+  #  displayName: Docker socket
+
+  - task: Docker@1
+    inputs:
+      command: build
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      dockerFile: deployment/Dockerfile
+      imageName: lenisha/contosoair:latest
+    displayName: Docker build
+
+  - task: Docker@1
+    displayName: Docker Tag
+    inputs:
+      command: tag
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      imageName: lenisha/contosoair:latest
+      arguments: lenisha/contosoair:$(Build.BuildId)
+  - task: Docker@1
+    displayName: Docker Push Latest
+    inputs:
+      command: push
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      imageName: lenisha/contosoair:latest
+  - task: Docker@1
+    displayName: Docker Push
+    inputs:
+      command: push
+      containerRegistryType: Container Registry
+      dockerRegistryEndpoint: DockerHub
+      imageName: lenisha/contosoair:$(Build.BuildId)     
+         

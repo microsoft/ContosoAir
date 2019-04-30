@@ -10,7 +10,6 @@ resources:
   - container: ubuntu
     image: lenisha/ubuntu16-docker:latest
 
-
 trigger: 
   branches:
     include:
@@ -29,28 +28,8 @@ jobs:
     name: 'ubuntu18' # 'ubuntu18'
 
   steps:
-    - script: 
-        npm install 
-      displayName: 'Run npm install'     
+    - template: node-steps.yml       
 
-    - script:
-        npm test
-      displayName: 'Run unit tests'
-      continueOnError: true
-
-    - task: PublishTestResults@2
-      displayName: 'Publish Test Results'
-      condition: succeededOrFailed()
-      inputs:
-        testResultsFiles: '$(System.DefaultWorkingDirectory)/test-report.xml'
-
-    - task: PublishCodeCoverageResults@1
-      displayName: 'Publish Code Coverage'
-      condition: in(variables['Agent.JobStatus'], 'Succeeded')
-      inputs:
-        codeCoverageTool: Cobertura
-        summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
-        reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
     - task: CopyFiles@2
       inputs:
         SourceFolder: $(Build.SourcesDirectory)
@@ -63,7 +42,7 @@ jobs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: drop
 
-- job: RunAssetPublish
+- job: RunDockerPublish
   container: ubuntu
   dependsOn: RunNodeBuild
   condition: and( succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -72,48 +51,4 @@ jobs:
     name: 'ubuntu18'    #vmImage: 'Ubuntu 16.04'
 
   steps:
-  - task: Docker@1
-    inputs:
-      command: login
-      containerRegistryType: Container Registry
-      dockerRegistryEndpoint: DockerHub
-    displayName: Docker login
- 
-  #- bash: |
-  #    set -ex
-  #    sudo groupadd -g $(stat --format='%g' /var/run/docker.sock) docker
-  #    sudo usermod -a -G docker $(whoami)
-  #  displayName: Docker socket
-
-  - task: Docker@1
-    inputs:
-      command: build
-      containerRegistryType: Container Registry
-      dockerRegistryEndpoint: DockerHub
-      dockerFile: Dockerfile
-      imageName: lenisha/contosoair:latest
-    displayName: Docker build
-
-  - task: Docker@1
-    displayName: Docker Tag
-    inputs:
-      command: tag
-      containerRegistryType: Container Registry
-      dockerRegistryEndpoint: DockerHub
-      imageName: lenisha/contosoair:latest
-      arguments: lenisha/contosoair:$(Build.BuildId)
-  - task: Docker@1
-    displayName: Docker Push Latest
-    inputs:
-      command: push
-      containerRegistryType: Container Registry
-      dockerRegistryEndpoint: DockerHub
-      imageName: lenisha/contosoair:latest
-  - task: Docker@1
-    displayName: Docker Push
-    inputs:
-      command: push
-      containerRegistryType: Container Registry
-      dockerRegistryEndpoint: DockerHub
-      imageName: lenisha/contosoair:$(Build.BuildId)     
-         
+    - template: docker-steps.yml

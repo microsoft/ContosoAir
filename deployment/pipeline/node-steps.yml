@@ -1,0 +1,23 @@
+ steps:
+    - script: 
+        npm install 
+      displayName: 'Run npm install'     
+
+    - script:
+        npm test
+      displayName: 'Run unit tests'
+      continueOnError: true
+
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results'
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: '$(System.DefaultWorkingDirectory)/test-report.xml'
+
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish Code Coverage'
+      condition: in(variables['Agent.JobStatus'], 'Succeeded')
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/*coverage.xml'
+        reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
