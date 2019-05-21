@@ -24,7 +24,7 @@ app.engine('hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
     helpers: {
-        i18n: (s, req) => new andlebars.SafeString(req.data.root.__(s))
+        i18n: (s, req) => new Handlebars.SafeString(req.data.root.__(s))
     }
 }));
 app.set('view engine', 'hbs');
