@@ -17,14 +17,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(flash());
 app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
+app.use(passport.initialize());
 app.use(passport.session());
 app.use(i18n.init);
 app.engine('hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
     helpers: {
-        i18n: (s, req) => new Handlebars.SafeString(req.data.root.__(s))
+        i18n: (s, req) => new andlebars.SafeString(req.data.root.__(s))
     }
 }));
 app.set('view engine', 'hbs');
