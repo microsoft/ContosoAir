@@ -1,5 +1,6 @@
 
-
+# Status Badge Sample code from AzDO Pipelines
+[![Build Status](https://msftjamesvac.visualstudio.com/ContsoAir/_apis/build/status/MSFTJim.ContosoAir?branchName=master)](https://msftjamesvac.visualstudio.com/ContsoAir/_build/latest?definitionId=8&branchName=master)
 
 # Microsoft.Github CI Demo
 
