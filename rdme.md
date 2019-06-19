@@ -1,7 +1,9 @@
 ###[![Build Status](https://dev.azure.com/iugamircea0062/new%20test/_apis/build/status/mirceaiuga.ContosoAir?branchName=master)](https://dev.azure.com/iugamircea0062/new%20test/_build/latest?definitionId=2&branchName=master)
 
-asd
-In order to launch a local server on port 3000 (can be modified with environment variable PORT) run:
+ddddsdddddsdsddddddddddd
+
+
+ server on port 3000 (can be modified with environment variable PORT) run:
 
 ```bash
 npm install
@@ -9,11 +11,6 @@ SET %COSMOS_DB_NAME%=<azure_web_site>
 SET %COSMOS_DB_AUTH_KEY%=<cosmos_auth_key>
 npm start
 This will run locally the server and attach to the CosmosDb Endpoint using mongodb connection string.
-
-## Azure Manual Deployment
-
-In order to create the Azure deploy there is an ARM template located at deployment folder.
-
 ARM template parameter | Usage | e.g.
 --- | --- | ---
 p_environment | set an environment suffix | `dev`
