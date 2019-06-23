@@ -1,7 +1,7 @@
 
 
 
-# Microsoft.Github CI Demo - ContosoAir
+# Microsoft.Github CI Demo - ContosoAir project
 
 Fork to private repo
 
