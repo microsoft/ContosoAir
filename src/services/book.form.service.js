@@ -9,7 +9,7 @@ class BookFormService {
         return  {
             kinds: [
                 { text:'Round trip', active: true},
-                { text: 'One way' },
+                { text: 'One way Jo' },
                 { text: 'Multi-city' }
             ],
             today: moment().toDate(),
