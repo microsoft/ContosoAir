@@ -1,5 +1,4 @@
-
-
+[![Build Status](https://dev.azure.com/peter-ho-mshk-demo/Demo%20-%20GitHub%20Integration/_apis/build/status/manfho.ContosoAir?branchName=master)](https://dev.azure.com/peter-ho-mshk-demo/Demo%20-%20GitHub%20Integration/_build/latest?definitionId=9&branchName=master)
 
 # Microsoft.Github CI Demo
 
