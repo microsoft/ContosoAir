@@ -1,7 +1,7 @@
 
 
 
-# Microsoft.Github CI Demo Joanne Healy
+# Microsoft.Github CI Demo
 
 Demo website application for Contoso Air.  
 Runs a nodejs server (Express v4.16) that stores customer booked flights in a CosmosDb database.
