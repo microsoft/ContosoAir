@@ -1,6 +1,6 @@
 
 
-
+[![Build Status](https://dev.azure.com/sarikacmore/ContosoAir/_apis/build/status/ContosoAir?branchName=master)](https://dev.azure.com/sarikacmore/ContosoAir/_build/latest?definitionId=11&branchName=master)
 # Microsoft.Github CI Demo
 
 Demo website application for Contoso Air.  
