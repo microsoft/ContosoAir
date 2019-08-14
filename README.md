@@ -1,3 +1,4 @@
+=======
 [![Build Status](https://dev.azure.com/wawong/MSReadyContosoAir/_apis/build/status/warrenwwc.ContosoAir?branchName=master)](https://dev.azure.com/wawong/MSReadyContosoAir/_build/latest?definitionId=6&branchName=master)
 
 # Microsoft.Github CI Demo
