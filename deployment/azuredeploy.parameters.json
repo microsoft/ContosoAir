@@ -6,7 +6,7 @@
 			"value": "dev"
 		},
 		"p_site_prefix": {
-			"value": "githubci"
+			"value": "githubcicd"
 		},
 		"p_site_web_name": {
 			"value": "web"
