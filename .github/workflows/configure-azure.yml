@@ -1,4 +1,9 @@
-on: [push]
+on:
+`push:
+  branch:
+    - master
+  path:
+    - 'deployment/*'
 
 name: ConfigureContosoOnAzure
 
