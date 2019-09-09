@@ -6,11 +6,11 @@ on:
       - 'deployment/*'
       - '.github/workflows/configure-azure.yml'
 
-name: ConfigureContosoOnAzure
+name: provision-contoso-env
 
 jobs:
 
-  build-and-deploy:
+  deploy-arm-template:
     runs-on: ubuntu-latest
     steps:
     
