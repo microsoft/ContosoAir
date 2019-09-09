@@ -4,6 +4,7 @@ on:
       - master
     paths:
       - 'deployment/*'
+      - '.github/workflows/configure-azure.yml'
 
 name: ConfigureContosoOnAzure
 
