@@ -9,7 +9,6 @@ on:
 name: provision-contoso-env
 
 jobs:
-
   deploy-arm-template:
     runs-on: ubuntu-latest
     steps:
