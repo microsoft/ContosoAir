@@ -18,4 +18,4 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - run: |
-        az webapp list --query "[?state=='Running']"
+        az group deployment create --resource-group 'mySampleRG' --template-file 'deployment/azuredeploy.json' --parameters 'p_site_prefix=davepfx1234
