@@ -19,8 +19,8 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - run: |
+        cwd
         ls
-        ls deployment
 
     - run: |
         az group deployment create --resource-group 'mySampleRG' --template-file deployment/azuredeploy.json --parameters p_site_prefix=davepfx1234
