@@ -12,7 +12,8 @@ jobs:
   deploy-arm-template:
     runs-on: ubuntu-latest
     steps:
-    
+    - uses: actions/checkout@v1
+      
     - uses: azure/actions/login@master
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
