@@ -6,6 +6,7 @@ on:
       - 'deployment/*'
       - '.github/workflows/configure-azure.yml'
 
+
 name: provision-contoso-env
 
 jobs:
