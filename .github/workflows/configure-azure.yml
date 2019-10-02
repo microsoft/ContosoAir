@@ -19,7 +19,6 @@ jobs:
 
     - run: |
         cd $GITHUB_WORKSPACE
-        echo $GITHUB_WORKSPACE
-        ls $GITHUB_WORKSPACE
-        cd
-        az group deployment create --resource-group 'mySampleRG' --template-file $GITHUB_WORKSPACE/../deployment/azuredeploy.json --parameters p_site_prefix=davepfx1234
+        cd ..
+        pwd
+        az group deployment create --resource-group 'mySampleRG' --template-file deployment/azuredeploy.json --parameters p_site_prefix=davepfx1234
