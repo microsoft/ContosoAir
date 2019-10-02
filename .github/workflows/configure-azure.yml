@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - uses: azure/actions/login@master
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+#    - uses: azure/actions/login@master
+#      with:
+#        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - run: |
-        ls ~/ContosoAir
+        ls ~
 
     - run: |
         az group deployment create --resource-group 'mySampleRG' --template-file ~/ContosoAir/deployment/azuredeploy.json --parameters p_site_prefix=davepfx1234
