@@ -16,8 +16,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 6.9
-#      - run: npm run local:build
-      - run: npm test .
+      - run: npm run local:build
+      - run: npm run unit-test
 
 #  publish-npm:
 #    needs: build
