@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.16.3
-      - run: npm run local:build
+#      - run: npm run local:build
       - run: npm run unit-test
 
 #  publish-npm:
