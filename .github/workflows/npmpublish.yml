@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 6.9
+          node-version: 10.16.3
       - run: npm run local:build
       - run: npm run unit-test
 
