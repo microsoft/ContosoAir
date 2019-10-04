@@ -46,3 +46,4 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GPR_PAT}}
+          GITHUB_TOKEN: ${{secrets.GPR_PAT}}
