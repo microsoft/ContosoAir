@@ -1,5 +1,5 @@
 
-
+[![Build Status](https://dev.azure.com/jics0804930955/jics080493/_apis/build/status/IvanCardel.ContosoAir?branchName=master)](https://dev.azure.com/jics0804930955/jics080493/_build/latest?definitionId=1&branchName=master)
 
 # Microsoft.Github CI Demo
 
