@@ -7,9 +7,8 @@ on:
   push:
     branches:
       - master
-
 jobs:
-  build:
+  build-test-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -20,21 +19,8 @@ jobs:
       - run: npm install jest-junit-reporter
       - run: npm run unit-test
 
-#  publish-npm:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v1
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: 12
-#          registry-url: https://registry.npmjs.org/
-#      - run: npm publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
   publish-gpr:
-    needs: build
+    needs: build-test-publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -43,7 +29,7 @@ jobs:
           node-version: 10.16.3
           registry-url: https://npm.pkg.github.com/
           scope: '@dmckinstry'
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GPR_PAT}}
-          GITHUB_TOKEN: ${{secrets.GPR_PAT}}
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.GPR_PAT}}
+#          GITHUB_TOKEN: ${{secrets.GPR_PAT}}
