@@ -29,7 +29,7 @@ jobs:
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v1
         with: 
-          app-name: dmck12345
+          app-name: davepfx1234-web-dev
           #publish-profile: ${{ secrets.azureWebAppPublishProfile }} # Define secret variable in repository settings as per action documentation
           #package: '.'  #default value is entire repo
           # If your function app project is not located in your repository's root
