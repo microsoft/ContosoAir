@@ -7,7 +7,6 @@ on:
       - '.github/workflows/configure-azure.yml'
 
 name: provision-contoso-env
-
 jobs:
   prepare-environment:
     runs-on: ubuntu-latest
