@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.16.3
-      - run: npm install jest
-      - run: npm install jest-junit-reporter
+      - run: npm install
+      - run: npm build
+#      - run: npm install jest
+#      - run: npm install jest-junit-reporter
       - run: npm run unit-test
 
 #  deploy-app:
