@@ -1,5 +1,5 @@
 
-
+[![Build Status](https://dev.azure.com/kshaub/ContosoAir/_apis/build/status/TotemAgency.ContosoAir?branchName=master)](https://dev.azure.com/kshaub/ContosoAir/_build/latest?definitionId=4&branchName=master)
 
 # Microsoft.Github CI Demo
 
