@@ -20,7 +20,7 @@ jobs:
         npm run build --if-present
         npm run unit-test --if-present
 
-    - uses: azure/login@master
+    - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
