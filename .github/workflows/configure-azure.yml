@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       
-    - uses: azure/actions/login@master
+    - uses: azure/login@master
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
