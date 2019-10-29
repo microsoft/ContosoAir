@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/melanycordoba/Semilla/_apis/build/status/MelanyCordoba.ContosoAir?branchName=master)](https://dev.azure.com/melanycordoba/Semilla/_build/latest?definitionId=1&branchName=master)
 
 
 # Microsoft.Github CI Demo
