@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish container
 on: [push, pull_request]
 
 jobs:
