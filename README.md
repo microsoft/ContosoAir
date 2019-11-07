@@ -1,4 +1,4 @@
-
+[![Build Status](https://dev.azure.com/fernandolgomez/GitHub%20integration%20with%20Azure%20Pipelines/_apis/build/status/fernandolgomez.ContosoAir?branchName=master)](https://dev.azure.com/fernandolgomez/GitHub%20integration%20with%20Azure%20Pipelines/_build/latest?definitionId=11&branchName=master)
 
 
 # Microsoft.Github CI Demo
