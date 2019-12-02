@@ -1,9 +1,7 @@
 
 
 
-# Microsoft.Github CI Demo - ContosoAir project on Azure
-
-Fork to private repo
+# Microsoft.Github CI Demo for TechX - ContosoAir project on Azure
 
 Demo website application for Contoso Air.  
 Runs a nodejs server (Express v4.16) that stores customer booked flights in a CosmosDb database.
