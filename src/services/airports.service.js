@@ -9,9 +9,8 @@ class AirportsService {
 
     getAll(){
         return this._airports.filter(a => a.code).map(avoidEmptyCity);
-        // return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
-        // Integration with AB#123 for Azure Boards, Pipeline
-
+//        return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
+//        for TechX demo
     }
 
     getByCode(code) {
