@@ -1,9 +1,7 @@
 
 
 
-# Microsoft.Github CI Demo
-
-Fork to private repo
+# Microsoft.Github CI Demo for TechX in Vienna - ContosoAir project on Azure
 
 Demo website application for Contoso Air.  
 Runs a nodejs server (Express v4.16) that stores customer booked flights in a CosmosDb database.
@@ -55,7 +53,7 @@ What's left is to compress the whole folder in a zip file and upload it to Azure
 
 > Note: Files under folders `deployment`, `scss` and files `front.js` and `webpack.config.js` are not required to be zipped.
 
-## Azure VSTS Deployment
+## Azure DevOps Deployment
 
 ### Build process tasks
 - [Copy Files](https://go.microsoft.com/fwlink/?LinkID=708389)
