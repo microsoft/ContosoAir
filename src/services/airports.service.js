@@ -10,7 +10,7 @@ class AirportsService {
     getAll(){
         return this._airports.filter(a => a.code).map(avoidEmptyCity);
 //        return this._airports.filter(a => a.code).map(avoidEmptyCity).sort((a, b) => (a.city > b.city) ? 1 : -1);
-//        for TechX demo on Dec, 9
+//        for TechX demo on Monday Dec, 9 
     }
 
     getByCode(code) {
