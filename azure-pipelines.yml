@@ -8,7 +8,7 @@ steps:
     inputs:
       command: custom
       verbose: false
-      customCommand: 'install --production'
+      customCommand: 'install'
   - script: 'npm test'
     displayName: 'Run unit tests'
     continueOnError: true
