@@ -6,9 +6,7 @@ steps:
   - task: Npm@1
     displayName: 'npm custom'
     inputs:
-      command: custom
-      verbose: false
-      customCommand: 'install'
+      command: install
   - script: 'npm test'
     displayName: 'Run unit tests'
     continueOnError: true
